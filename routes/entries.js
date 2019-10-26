@@ -15,7 +15,7 @@ router.post("/", async function(req, res, next) {
   try {
     const result = await db.query(
       "INSERT INTO entries (team_name,email,event) VALUES ($1,$2,$3) RETURNING *",
-      [req.body.name, req.body.type]
+      [req.body.team_name, req.body.email, req.body.event]
     );
     return res.json(result.rows[0]);
   } catch (err) {
