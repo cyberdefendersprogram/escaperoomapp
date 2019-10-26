@@ -29,6 +29,6 @@ if (app.get("env") === "development") {
 }
 
 app.listen(PORT, function() {
-  console.log("Listening on ${PORT}!");
+  console.log(`Listening on ${ PORT }!`);
 });
 
