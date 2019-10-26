@@ -3,7 +3,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const entriesRoutes = require("./routes/entries");
 const morgan = require("morgan");
+const cors = require("cors");
+const PORT = process.env.PORT || 3000;
 
+app.use("cors");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -26,7 +29,7 @@ if (app.get("env") === "development") {
   });
 }
 
-app.listen(3000, function() {
-  console.log("Server starting on port 3000!");
+app.listen(PORT, function() {
+  console.log("Listening on ${PORT}!");
 });
 
