@@ -4,12 +4,11 @@ const bodyParser = require("body-parser");
 const entriesRoutes = require("./routes/entries");
 const morgan = require("morgan");
 const cors = require("cors");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(morgan("tiny"));
 app.use("/entries", entriesRoutes);
 
